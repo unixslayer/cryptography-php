@@ -55,6 +55,20 @@ class CesarTest extends TestCase
     }
 
     /**
+     * @param string $message
+     *
+     * @dataProvider rot13DataProvider
+     */
+    public function testRot13(string $message)
+    {
+        $cesar = new Cesar(13, 'abcdefghijklmnopqrstuvwxyz');
+        $encoded = $cesar->cypher($message);
+        $decoded = $cesar->cypher($encoded);
+
+        $this->assertEquals($message, $decoded);
+    }
+
+    /**
      * @return array
      */
     public function basicTestCipher(): array
@@ -91,6 +105,28 @@ class CesarTest extends TestCase
             [9, sha1(rand())],
             [11, sha1(rand())],
             [15, sha1(rand())],
+            [17, sha1(rand())],
+            [19, sha1(rand())],
+            [22, sha1(rand())],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function rot13DataProvider(): array
+    {
+        return [
+            [sha1(rand())],
+            [sha1(rand())],
+            [sha1(rand())],
+            [sha1(rand())],
+            [sha1(rand())],
+            [sha1(rand())],
+            [sha1(rand())],
+            [sha1(rand())],
+            [sha1(rand())],
+            [sha1(rand())],
         ];
     }
 
