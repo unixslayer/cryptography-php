@@ -1,0 +1,24 @@
+{
+    "name": "unixslayer/cryptography",
+    "description": "Some basic cryptography in PHP",
+    "type": "library",
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.3@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Unixslayer\\Cryptography\\": "src"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Piotr Zając",
+            "email": "piotr.zajac@unixslayer.pl"
+        }
+    ],
+    "minimum-stability": "dev"
+}
